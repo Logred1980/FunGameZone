@@ -1,18 +1,21 @@
 # FunGameZone
 
-FunGameZone is a minimalistic and user-friendly multiplayer game zone system built with F# and WebSharper.
-Its goal is not to implement a specific game, but to provide a shared online platform where players can join hosted game rooms and interact.
-The system focuses on usability and clarity, with server-side logic handling all game and user state.
+FunGameZone is a very simple and user-friendly multiplayer game zone system, written in F# and WebSharper. Its goal was not to implement a game, but to provide a shared online platform that is very easy to use and does not require a lot of resources.
+Users open the web interface and can create game rooms, join them. Each room has a Host who monitors the players and can start a game.
+The data is stored on the server side, so the clients only keep the information necessary for display on their platform.
+I wanted to avoid the problem of login and registration interfaces, so the user interfaces are blocked from each other by simple URL generation.
+The project is objectionable from a security perspective, but I designed it more for easy afternoon entertainment, which anyone with a little IT knowledge can run at home.
 
 ## Features
 
-- Hosts can create new game rooms by entering a room name and their own name.
-- Players can join any available room by entering their name and selecting a room.
-- Each room and player is uniquely identified via an 8-character token, embedded into the URL.
-- Players can join by visiting the room URL directly, and the system automatically restores their identity.
-- Rooms can be started and closed by the host.
-- A Game Zone interface becomes visible once the room is started, displaying each player and allowing interaction (e.g., buttons like Draw and Pass).
-- All game data (e.g., players, rooms, game state) is managed and stored on the server.
+- Any user can create new game rooms by entering a room name and their own name.
+- Players can join any free room by entering their name and selecting a room.
+- Each room and player is uniquely identified by an 8-character token embedded in the URL.
+- No login or registration, just visit the generated URL directly and you are already connected to the game.
+- The Host can close and open the room for joiners, as well as terminate it.
+- The game zone interface becomes visible after starting the room, which displays all players.
+- The Host can start the game, which is visible to everyone.
+- All game data (e.g. players, rooms, game state) is managed and stored on the server.
 
 ## Authentication Model
 
@@ -45,6 +48,11 @@ To run the project on your own machine:
 7. To connect from other devices on the same network (e.g., another PC or smartphone), replace `localhost` with the IP address of the machine running the server. For example:
    ``` http://192.168.1.123:5000 ```
 You can simulate multiple users by opening different browser tabs or using private/incognito mode.
+
+Short version:
+Download the Publish.zipo file, which is a zip file!
+Unzip it and in the directory just run this command:
+``` FunGameZone.exe --urls http://0.0.0.0:5000 ```
 
 ## Application Screenshots
 
