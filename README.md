@@ -53,27 +53,27 @@ Below are screenshots of the application in use:
 ### Room creation and listing
 Users can create rooms and view all existing ones.
 
-![Room creation](ZonePage.png)
+![Room creation](FunGameZone/ZonePage.png)
 
 ### Host view: waiting for players and starting the game
 The host can see joined players and start the game.
 
-![Host view](HostInRoomPage.png)
+![Host view](FunGameZone/HostInRoomPage.png)
 
 ### Waiting for the game start
 One player is waiting for the Host to start the game.
 
-![Game board](PlayerWaiting.png)
+![Game board](FunGameZone/PlayerWaiting.png)
 
 ### Host view
 In-game host view..
 
-![Player view](HostInGame.png)
+![Player view](FunGameZone/HostInGame.png)
 
 ### Player view
 In-game Player view.
 
-![Player view](PlayerInGame.png)
+![Player view](FunGameZone/PlayerInGame.png)
 
 ## Goals and Vision
 
