@@ -25,7 +25,7 @@ module Game21Zone =
         span [attr.``class`` "me-1"] [text value]
     
     let showGameZone
-        (roomToken: string)
+        (ownName: string)
         (myToken: string)
         (stateObj: obj)
         (playerStateOptObj: obj option)
@@ -59,7 +59,7 @@ module Game21Zone =
                         h5 [
                             attr.``class`` "fw-bold mb-2"
                             attr.style "margin-left: 15px"
-                        ] [text (if isMe then "You" else token)]
+                        ] [text (if isMe then "You" else ownName)]
 
                         div [] cardDocs
 
@@ -73,44 +73,3 @@ module Game21Zone =
                         ]
                     ]
         ]
-        (*let showGameZone
-        (roomToken: string)
-        (myToken: string)
-        (state: GameState)
-        : Doc =
-
-        let players = state.PlayerOrder |> List.indexed
-
-        div [attr.``class`` "d-flex flex-wrap justify-content-start mt-3"] [
-            for (i, token) in players do
-                let isMe = (token = myToken)
-                let bgColor = if isMe then "bg-light" else "bg-secondary"
-                yield
-                    div [
-                        attr.``class`` (bgColor + " text-dark rounded p-3 me-3 mb-3 position-relative")
-                        attr.style "min-width: 300px; flex: 1; max-width: 48%;"
-                    ] [
-                        div [
-                            attr.``class`` "position-absolute top-0 start-0 fw-bold text-white bg-dark px-2"
-                            attr.style "border-bottom-right-radius: 0.5rem;"
-                        ] [text $"{i + 1}."]
-
-                        h5 [
-                            attr.``class`` "fw-bold mb-2"
-                            attr.style "margin-left: 15px"
-                        ] [text (if isMe then "You" else token)]
-
-                        div [] [
-                            text "Your cards will appear here..."
-                        ]
-
-                        div [attr.``class`` "mb-2"] [
-                            button [
-                                attr.``class`` "btn btn-sm btn-primary me-2"
-                            ] [text "Draw"]
-                            button [
-                                attr.``class`` "btn btn-sm btn-warning"
-                            ] [text "Pass"]
-                        ]
-                    ]
-        ]*)

@@ -9,7 +9,7 @@ open FunGameZone
 [<EntryPoint>]
 let main args =
     let builder = WebApplication.CreateBuilder(args)
-    
+
     // Add services to the container.
     builder.Services.AddWebSharper()
         .AddAuthentication("WebSharper")

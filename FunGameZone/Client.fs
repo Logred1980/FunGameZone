@@ -155,6 +155,14 @@ module Client =
 
         let currentGameVar = Var.Create None
         let playerStateVar = Var.Create<Option<Game21Logic.PlayerState>> None
+        let ownName =
+            playerInfosView
+            |> View.Map (fun players ->
+                players
+                |> List.tryFind (fun p -> p.Token = personalToken)
+                |> Option.map (fun p -> p.Name)
+                |> Option.defaultValue personalToken
+            )
 
         async {
             let! psOpt = Server.GetPlayerState(roomToken, personalToken)
@@ -162,8 +170,8 @@ module Client =
         } |> Async.StartImmediate |> ignore
 
         let availableGames : (string * (string -> string -> obj -> obj option -> Doc)) list = [
-            "Game21", (fun roomToken ownToken stateObj playerStateObjOpt ->
-                FunGameZone.Game21Zone.showGameZone roomToken ownToken stateObj playerStateObjOpt
+            "Game21", (fun ownName ownToken stateObj playerStateObjOpt ->
+                FunGameZone.Game21Zone.showGameZone ownName ownToken stateObj playerStateObjOpt
             )
         ]
 
@@ -346,7 +354,6 @@ module Client =
                                         let! result = Server.SetRoomOpenState(roomToken, newState)
                                         match result with
                                         | Ok () ->
-                                            // Frissítsd a roomInfoVar-t, hogy a View is frissüljön!
                                             let! updatedRoom = Server.GetRoomByToken roomToken
                                             roomInfoVar := updatedRoom
                                         | Error msg -> JS.Alert msg |> ignore
