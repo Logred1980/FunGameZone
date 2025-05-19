@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FunGameZone", "FunGameZone\FunGameZone.fsproj", "{7D7F0E0C-97AE-4D88-A1C2-D9E8E4B2A75E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D7F0E0C-97AE-4D88-A1C2-D9E8E4B2A75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D7F0E0C-97AE-4D88-A1C2-D9E8E4B2A75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D7F0E0C-97AE-4D88-A1C2-D9E8E4B2A75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D7F0E0C-97AE-4D88-A1C2-D9E8E4B2A75E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6BFF4FE-4D6A-46FB-92A2-C5211849DE76}
+	EndGlobalSection
+EndGlobal
