@@ -51,29 +51,34 @@ You can simulate multiple users by opening different browser tabs or using priva
 Below are screenshots of the application in use:
 
 ### Room creation and listing
-Players can create rooms and view all existing ones.
+Users can create rooms and view all existing ones.
 
-![Room creation](docs/screenshots/room-creation.png)
+![Room creation](ZonePage.png)
 
 ### Host view: waiting for players and starting the game
 The host can see joined players and start the game.
 
-![Host view](docs/screenshots/host-waiting.png)
+![Host view](HostInRoomPage.png)
 
-### Game in progress
-Each player is presented with game controls like "Draw" and "Pass".
+### Waiting for the game start
+One player is waiting for the Host to start the game.
 
-![Game board](docs/screenshots/game-play.png)
+![Game board](PlayerWaiting.png)
+
+### Host view
+In-game host view..
+
+![Player view](HostInGame.png)
 
 ### Player view
-Each player sees their own token, room info, and can exit at any time.
+In-game Player view.
 
-![Player view](docs/screenshots/player-view.png)
+![Player view](PlayerInGame.png)
 
 ## Goals and Vision
 
-The aim of this project was to create a well-structured multiplayer lobby with a seamless and intuitive interface. The focus was not on building a complex game engine, but on managing rooms, players, and a shared game state in a clean, functional, and scalable way.
+The goal of the project was to create a well-structured multiplayer zone. The main direction was to make it cheap, easy and fast to use. The focus was not on building a complex game engine, but on managing rooms, players and shared game state in a clean, functional and scalable way. I used the possibilities of WebSharper as much as I could. It would have been a bit of a dive to develop fully functional games for this.
+Storing data on the server and client side was the biggest challenge. I tried to hide other users' data from the users. This project was not the most secure way to create, but a world opened up for me when I could log in to the server running on my laptop with my mobile phone, and with my old desktop PC.
+I managed to create a game zone that did not require a lot of resources, which anyone can run without a big investment.
 
-The design leverages WebSharper’s reactive UI model and F# server logic to offer a cohesive client-server experience, where each client operates with isolated access based on tokenized URLs.
-
-## Neptun code: FPB5E4
+## Neptun code: RNQV0H
